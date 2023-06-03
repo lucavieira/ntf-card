@@ -1,11 +1,11 @@
 :root {
-    --soft-blue: hsl(215, 51%, 70%)
-    --cyan: hsl(178, 100%, 50%)
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
 
-    --very-dark-blue: hsl(217, 54%, 11%) /* main BG */
-    --very-dark-blue: hsl(216, 50%, 16%) /* card BG */
-    --very-dark-blue: hsl(215, 32%, 27%) /* line */
-    --white: hsl(0, 0%, 100%)
+    --very-dark-blue-bg-main: hsl(217, 54%, 11%); /* main BG */
+    --very-dark-blue-bg-card: hsl(216, 50%, 16%);/* card BG */
+    --very-dark-blue-line: hsl(215, 32%, 27%); /* line */
+    --white: hsl(0, 0%, 100%);
 }
 
 * {
@@ -23,4 +23,119 @@
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    background-color: var(--very-dark-blue-bg-main);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .card {
+    width: 320px;
+    height: 530px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    border-radius: 25px;
+    background-color: var(--very-dark-blue-bg-card);
+
+    padding: 20px;
+}
+
+main .card img {
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+main .card h1 {
+    color: var(--white);
+
+    font-size: 18px;
+
+    margin-top: 5px;
+}
+
+main .card p {
+    color: var(--soft-blue);
+
+    font-weight: 300;
+
+    font-size: 16px;
+}
+
+main .card .details {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 10px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--very-dark-blue-line);
+}
+
+main .card .details .coin, main .card .details .time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+main .card .details .coin img{
+    width: 10px;
+}
+
+main .card .details .coin span {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--cyan);
+}
+
+main .card .details .time img {
+    width: 15px;
+}
+
+main .card .details .time span {
+    font-size: 14px;
+    font-weight: 400;
+
+    color: var(--soft-blue);
+}
+
+main .card .perfil {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+main .card .perfil img {
+    width: 30px;
+
+    border-radius: 50%;
+    border: 1px solid var(--white);
+}
+
+main .card .perfil span {
+    color: var(--soft-blue);
+    
+    font-size: 15px;
+    font-weight: 400;
+}
+
+main .card .perfil span .creator {
+    color: var(--white);
 }

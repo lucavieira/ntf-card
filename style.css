@@ -1,6 +1,7 @@
 :root {
     --soft-blue: hsl(215, 51%, 70%);
     --cyan: hsl(178, 100%, 50%);
+    --cyan-hover: hsla(178, 100%, 50%, 0.5);
 
     --very-dark-blue-bg-main: hsl(217, 54%, 11%); /* main BG */
     --very-dark-blue-bg-card: hsl(216, 50%, 16%);/* card BG */
@@ -54,10 +55,35 @@ main .card {
     padding: 20px;
 }
 
-main .card img {
+main .card #nft, main .card #view {
     width: 100%;
+    height: 100%;
 
     border-radius: 10px;
+}
+
+main .card #nft {
+    background-image: url('./images/image-equilibrium.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+main .card #view {
+    background-color: var(--cyan-hover);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    transition: opacity .2s linear;
+
+    cursor: pointer;
+}
+
+main .card #nft:hover #view{
+    opacity: 1;
 }
 
 main .card h1 {
@@ -66,6 +92,14 @@ main .card h1 {
     font-size: 18px;
 
     margin-top: 5px;
+
+    cursor: pointer;
+
+    transition: all .2s ease-in-out;
+}
+
+main .card h1:hover, main .card .perfil .creator:hover {
+    color: var(--cyan);
 }
 
 main .card p {
@@ -138,4 +172,8 @@ main .card .perfil span {
 
 main .card .perfil span .creator {
     color: var(--white);
+
+    cursor: pointer;
+
+    transition: all .2s ease-in-out;
 }
